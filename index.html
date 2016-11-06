@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Bundle Demo</title>
+        <meta charset="UTF-8">
+        <base href="/">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+        <link href="css/styles.css" rel="stylesheet">
+
+        <!-- 1. Load libraries -->
+        
+        <!-- Polyfill(s) for older browsers -->
+        <script src="node_modules/core-js/client/shim.min.js"></script>
+        <script src="node_modules/zone.js/dist/zone.js"></script>
+        <script src="node_modules/reflect-metadata/Reflect.js"></script>
+        <script src="node_modules/systemjs/dist/system.src.js"></script>
+        
+        <!-- 2. Configure SystemJS -->
+        <script src="systemjs.config.js"></script>
+
+        <script src="bundle.js"></script>
+
+        <script src="patch_systemJs_import.js"></script>
+
+        <script src="bundleToFeatureMapping.js"></script>
+        
+        <script src="index.js"></script>
+
+    </head>
+
+    <body class="container">
+        <host-app>Loading...</host-app>
+    </body>
+
+</html>
