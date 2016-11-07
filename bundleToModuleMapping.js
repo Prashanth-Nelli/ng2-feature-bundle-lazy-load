@@ -1,4 +1,4 @@
 var bundleMap = {
-    "app/create/create.js" : "dist/create.js",
-    "app/view/view.js"   : "dist/view.js"
+    "app/create/create.js" : "create.js",
+    "app/view/view.js"     : "view.js"
 };
