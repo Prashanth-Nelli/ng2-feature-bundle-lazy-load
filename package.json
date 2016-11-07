@@ -6,7 +6,7 @@
     "lite": "lite-server",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
-    "main" : "appserver.js"
+    "main" : "server.js"
   },
   "dependencies": {
     "@angular/common": "~2.1.1",
