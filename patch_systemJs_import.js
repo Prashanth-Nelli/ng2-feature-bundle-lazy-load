@@ -63,13 +63,11 @@
 
     System.import = function(name){
 
-        if(name.indexOf('bundle') != -1){
+        if(bundleMap[name]){
 
-            var host = window.location.host;
+            name = name.split('.js')[0] + '.js'
 
-            name = name.split('.js')[0] + '.js';
-
-            if(System.has(bundleMap[name] || name)){
+            if(System.has(name)){
                 console.info('from cache');
                 return importFunc(name);
             }else{
@@ -85,23 +83,28 @@
 
     }
 
-    function initialModuleLoad(name){
+    function initialModuleLoad(moduleName){
+
+        var file = moduleName;
+
+        if(bundleMap[file]){
+            file = bundleMap[file];
+        }
         
-        return loadFile(getFullURL(name))
+        return loadFile(getFullURL(file))
         .then(function(text){
             var script = document.createElement("script");
             script.innerHTML = text;
             document.head.appendChild(script);
-            return getModule(name);
+            return getModule(moduleName);
         });
 
-        function getModule(name){
+        function getModule(moduleName){
 
             return new Promise(function(resolve,reject){
 
                 setTimeout(function(){
-                    name = bundleMap[name] || name;
-                    resolve(importFunc(name));
+                    resolve(importFunc(moduleName));
                 });
 
             });

@@ -9,8 +9,8 @@ const routes = RouterModule.forRoot([
         pathMatch : 'full',
         redirectTo : 'summary'
     },
-    { path: 'view', loadChildren: 'view#ViewModule' },
-    { path: 'create', loadChildren: 'create#CreateModule' }
+    { path: 'view', loadChildren: 'app/view/view.js#ViewModule' },
+    { path: 'create', loadChildren: 'app/create/create.js#CreateModule' }
 ]);
 
 @NgModule({

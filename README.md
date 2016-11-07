@@ -28,7 +28,7 @@ A Project which depicts lazy loading of Angular2 feature module bundle.
 ### Finally run the app by running the following command
 
 ```
-`
+
  npm start
 
 ```

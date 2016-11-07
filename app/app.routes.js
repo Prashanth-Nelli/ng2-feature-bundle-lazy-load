@@ -16,8 +16,8 @@ var routes = router_1.RouterModule.forRoot([
         pathMatch: 'full',
         redirectTo: 'summary'
     },
-    { path: 'view', loadChildren: 'view#ViewModule' },
-    { path: 'create', loadChildren: 'create#CreateModule' }
+    { path: 'view', loadChildren: 'app/view/view.js#ViewModule' },
+    { path: 'create', loadChildren: 'app/create/create.js#CreateModule' }
 ]);
 var RoutingModule = (function () {
     function RoutingModule() {

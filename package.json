@@ -2,7 +2,7 @@
   "name": "ng2-feature-bundle-lazy-load",
   "version": "1.0.0",
   "scripts": {
-    "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
+    "start": "tsc | node build.js && concurrently \"tsc -w\" \"lite-server\"",
     "lite": "lite-server",
     "tsc": "tsc",
     "tsc:w": "tsc -w"
